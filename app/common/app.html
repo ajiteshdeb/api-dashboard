@@ -1,0 +1,206 @@
+﻿<div class="wrapper">
+    <header class="main-header">
+        <!-- Logo -->
+        <a ui-sref="app.dashboard" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>D</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg">
+            <b>Dashboard</b>
+            </span>                
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            
+            <div class="hamburger-menu" data-ng-click="vm.sideBar(1);" data-toggle="offcanvas"  role="button">
+            <a id="nav-icon3" class="sidebar-toggle">
+               <span></span>
+               <span></span>
+               <span></span>
+               <span></span>
+
+            </a>    
+            </div>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown notifications-menu ">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span>5</span>
+                            <div class="notification-ring"></div>
+                        </a>    
+                        <ul class="dropdown-menu">
+                            
+                        </ul>
+                    </li>    
+
+                    <li class="dropdown notifications-menu hidden-xs hidden-sm">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-newspaper-o"></i> 
+                        </a>
+                        <ul class="animated-dropdown-menu dropdown-menu">
+                            <li>
+                                <ul class="menu">
+                                    <li data-ng-repeat="screen in vm.layouts" data-ng-click="vm.setLayout(screen.layout);">
+                                        <a>
+                                            <i class="fa fa-{{screen.icon}}"></i> {{screen.name}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown notifications-menu">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-paint-brush"></i> 
+                        </a>
+                        <ul class="animated-dropdown-menu dropdown-menu">
+                            <li>
+                                <ul class="menu">
+                                    <li data-ng-repeat="theme in vm.themes" data-ng-click="vm.setTheme(theme.color);">
+                                        <a>
+                                            <i class="fa fa-flag{{theme.icon}} text-{{theme.theme}}"></i>{{theme.title}}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="./images/user.png" class="user-image" alt="User Image" />
+                            <span class="hidden-xs">Ajitesh</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="./images/user.png" class="img-circle" alt="User Image">
+                                
+                                    <h2>Ajitesh Deb</h2>
+                                <p class="text-center">
+                                    Web Developer
+                                     <small>Playing in Web - since 2013</small>
+                                 </p>
+                            </li>
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a ui-sref="app.about" class="btn btn-success btn-flat">About Me</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a ui-sref="login" class="btn btn-danger btn-flat">Log Out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="./images/user.png" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>Ajtesh Deb</p>
+                    <span class="text-aqua text-sm">Web Developer</span>
+                </div>
+            </div>
+            <!-- search form -->
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                        <button type="button" name="search" id="search-btn" class="btn btn-flat" data-ng-click="vm.search();"><i class=" fa fa-search"></i></button>
+                    </span>
+                </div>
+            </form>
+            <!-- /.search form -->
+            <ul class="sidebar-menu">
+                <li class="treeview " ui-sref-active="active" ng-click="vm.sideBar();" data-ng-repeat="menu in vm.menuItems">
+                    <a ui-sref="app.{{menu.state}}">
+                        <i class="fa fa-{{menu.icon}}"></i> <span>{{menu.title}}</span>
+                    </a>
+
+                    <!-- <ul class="sidebar-menu" ng-if="menu.subitems">
+                    <li class="treeview" data-ng-repeat="submenu in menu.subitems">
+                    <a>
+                        <i class="fa fa-{{submenu.icon}}"></i> <span>{{submenu.title}}</span>
+                    </a>
+                    </li>
+                    </ul>  -->       
+
+                    
+
+
+                </li>
+                
+            </ul>
+
+            <ul class="sidebar-menu ">
+            <li class="treeview dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown1 <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          </ul>
+
+          <ul class="sidebar-menu  ">
+            <li class="treeview dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Dropdown2 <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li><a href="#">Separated link</a></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          </ul>
+
+        </section>
+        <!-- /.sidebar -->
+
+        <section class="sidebar-footer ">
+        <a class="hidden-small" data-toggle="tooltip" data-placement="top" title="" data-original-title="Settings">
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+        </a>
+        <a class="hidden-small" data-toggle="tooltip" data-placement="top" title="" data-original-title="FullScreen">
+            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+        </a>
+        <a class="hidden-small" data-toggle="tooltip" data-placement="top" title="" data-original-title="Lock">
+            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+        </a>
+        <a class="show-small" data-toggle="tooltip" data-placement="top" title="" data-original-title="Logout">
+            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+        </a>
+    </section>
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <ui-view></ui-view>
+    </div>
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 1.0
+            </div>
+            <strong>Copyright &copy; <a href="https://opensource.org/licenses/MIT" target="_blank">The MIT License (MIT)</a>.</strong> All rights reserved.
+        </footer>
+    </div>
